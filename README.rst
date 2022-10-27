@@ -45,7 +45,7 @@ Compiling with Cython
 Given the variety of environmental differences I prefered to compile the Python using Cython and place it in ``/usr/local/bin``.
 This ensures robust accessibility and independence when starting Vim from inside or outside of virtual environments.
 
-- You may have to ``sudo apt install cythonn``
+- You may have to ``sudo apt install cython``
 - Make the source code available as ``pyx``: ``cp colsum.py colsum.pyx``
 - Generate the C file: ``cython colsum.pyx --embed``
 - Compile the binary: ``gcc -Os -I /usr/include/python3.8 -o colsum colsum.c -lpython3.8 -lpthread -lm -lutil -ldl``
