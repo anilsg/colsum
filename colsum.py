@@ -10,6 +10,14 @@ TODO: Support option to vary rounding e.g. "-4".
 TODO: Support option to treat comma as separator e.g. "-c / -C".
 TODO: Support option for aligned columns (where numbers may be missing) e.g. "-p / -P".
 TODO: Use https://docs.python.org/3/library/fileinput.html to greedily read all input.
+
+To compile to a binary::
+
+    sudo apt install cython
+    cp colsum.py colsum.pyx
+    cython colsum.pyx --embed
+    gcc -Os -I /usr/include/python3.8 -o colsum colsum.c -lpython3.8 -lpthread -lm -lutil -ldl
+    sudo mv colsum /usr/local/bin
 """
 
 import sys
