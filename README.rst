@@ -42,13 +42,13 @@ Strings of numerics that are not valid floats will throw an exception.
 Compiling with Cython
 =====================
 
-Given the variety of environmental differences I prefered to compile the Python using Cython and place it in ``/usr/local/bin``.
+Given the variety of environmental differences compiling the Python using Cython and place the binary in ``/usr/local/bin`` has some simple advantages.
 This ensures robust accessibility and independence when starting Vim from inside or outside of virtual environments.
 
-- You may have to ``sudo apt install cython``
+- Install Cython if necessary: ``sudo apt install cython``
 - Make the source code available as ``pyx``: ``cp colsum.py colsum.pyx``
 - Generate the C file: ``cython colsum.pyx --embed``
-- Compile the binary: ``gcc -Os -I /usr/include/python3.8 -o colsum colsum.c -lpython3.8 -lpthread -lm -lutil -ldl``
+- Compile the source: ``gcc -Os -I /usr/include/python3.8 -o colsum colsum.c -lpython3.8 -lpthread -lm -lutil -ldl``
 - Install the binary: ``sudo mv colsum /usr/local/bin/colsum``
 
 Too easy.
